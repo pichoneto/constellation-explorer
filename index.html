@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>My first three.js app</title>
+		<style>
+			body { 
+				margin: 0;
+			}
+
+			#blocker {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				background-color: rgba(0,0,0,0.5);
+				color: white;
+			}
+
+			#instructions {
+				width: 100%;
+				height: 100%;
+
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+
+				text-align: center;
+				font-size: 14px;
+				cursor: pointer;
+			}
+
+			#info {
+				position: absolute; 
+				padding: 24px; 
+				color: white;
+				background-color: rgba(32, 32, 32, 0.5);
+    			border-radius: 0px 0px 4px 0px;
+			}
+
+			h4 {
+				margin-left: 12px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="blocker">
+			<div id="instructions">
+				<p style="font-size:36px">
+					Click to start
+				</p>
+				<p>
+					Move: WASD<br/>
+					Look: MOUSE<br>
+					Show constellation lines: C<br/>
+					Show constellation boundaries: B<br/>
+					Move stars: M<br/>
+					Return to origin: R<br/>
+					Show instructions: ESC
+				</p>
+			</div>
+		</div>
+		<div id="info">
+			<h3>POINTING AT</h3>
+			<h4>RA: <span id="ra"></span></h4>
+			<h4>DEC: <span id="dec"></span></h4>
+		</div>
+        <script type="module">          
+            import * as THREE from 'https://cdn.skypack.dev/pin/three@v0.132.2-1edwuDlviJO0abBvWgKd/mode=imports/optimized/three.js';
+            window.THREE = THREE;
+        </script>
+        <script type="module">
+            import { PointerLockControls } from 'https://cdn.skypack.dev/three@v0.132.2-1edwuDlviJO0abBvWgKd/examples/jsm/controls/PointerLockControls.js';       
+            window.PointerLockControls = PointerLockControls;
+        </script>
+		<script defer src="./js/main.js"></script>
+	</body>
+</html>
